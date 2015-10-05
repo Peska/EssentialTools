@@ -30,6 +30,8 @@ namespace EssentialTools.Infrastructure
 		private void AddBindings()
 		{
 			kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
-		}
+			kernel.Bind<IDiscountHelper>().To<DefaulDiscountHelper>().WithConstructorArgument(50M);
+			kernel.Bind<IDiscountHelper>().To<FlexibleDiscountHelper>().WhenInjectedInto<LinqValueCalculator>();
+        }
 	}
 }
