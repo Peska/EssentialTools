@@ -15,7 +15,7 @@ namespace EssentialTools.Controllers
 			new Product { Name = "Kayak4", Category = "Watersports3", Price = 274M },
 		};
 
-		public HomeController(IValueCalculator calcParam)
+		public HomeController(IValueCalculator calcParam, IValueCalculator calcParam2)
 		{
 			calc = calcParam;
 		}
